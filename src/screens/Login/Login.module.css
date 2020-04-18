@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-bg-main);
+    height: 100%;
+    align-items: center;
+}
+
+.paper {
+    padding: 4rem 6.6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 31rem;
+}
+
+.form {
+
+}
+
+.form__title {
+    align-self: center;
+    margin-bottom: 1.5rem;
+}
+
+.form__label {
+    margin-top: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.form__button {
+    margin-top: 5rem;
+    align-self: center;
+}

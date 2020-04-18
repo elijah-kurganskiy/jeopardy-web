@@ -1,0 +1,206 @@
+.button {
+  display: flex;
+  align-items: center;
+  border-radius: 0.6em;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  font-size: 1em;
+  border: none;
+  justify-content: center;
+}
+
+.button span {
+  padding: 0.3rem 0.4rem 0.3rem 0.4rem;
+}
+
+.button:not(span) {
+  padding: 0.6rem;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button_color_primary {
+  --color-first: var(--color-primary-main);
+  --color-first--hover: var(--color-primary-light);
+  --color-first--active: var(--color-primary-dark);
+
+  --color-second: var(--color-common-white);
+  --color-second--hover: var(--color-common-white);
+  --color-second--active: var(--color-common-white);
+}
+
+.button_color_secondary {
+  --color-first: var(--color-secondary-main);
+  --color-first--hover: var(--color-secondary-light);
+  --color-first--active: var(--color-secondary-dark);
+
+  --color-first-text: var(--color-text-secondary-main);
+  --color-first-text--hover: var(--color-text-secondary-light);
+  --color-first-text--active: var(--color-text-secondary-dark);
+
+  --color-second: var(--color-common-white);
+  --color-second--hover: var(--color-common-white);
+  --color-second--active: var(--color-common-white);
+}
+
+.button_type_filled {
+  border: 1px solid var(--color-first);
+  background-color: var(--color-first);
+  border-color: var(--color-first);
+  color: var(--color-second);
+}
+
+.button_type_filled:hover:enabled,
+.button_type_filled:focus:enabled {
+  background-color: var(--color-first--hover);
+  border-color: var(--color-first--hover);
+  color: var(--color-second--hover);
+}
+
+.button_type_filled:active:enabled {
+  background-color: var(--color-first--active);
+  border-color: var(--color-first--active);
+  color: var(--color-second--active);
+}
+
+.button_type_filled:disabled {
+  background-color: var(--color-first);
+  border-color: var(--color-first);
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.button_type_filled svg {
+  fill: var(--color-second);
+}
+
+.button_type_outline {
+  border: 1px solid var(--color-first);
+  background-color: unset;
+  border-color: var(--color-first);
+  color: var(--color-first-text, var(--color-first));
+}
+
+.button_type_outline:enabled:hover,
+.button_type_outline:enabled:focus {
+  border-color: var(--color-first--hover);
+  color: var(--color-first-text--hover, var(--color-first--hover));
+}
+
+.button_type_outline:active:enabled {
+  border-color: var(--color-first--active);
+  color: var(--color-first-text--active, var(--color-first--active));
+}
+
+.button_type_outline:disabled {
+  border-color: var(--color-first);
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.button_type_outline svg {
+  fill: var(--color-first-text, var(--color-first));
+}
+.button_type_outline:enabled:hover svg,
+.button_type_outline:enabled:focus svg {
+  fill: var(--color-first-text--hover, var(--color-first--hover));
+}
+
+.button_type_outline:active:enabled svg {
+  fill: var(--color-first-text--active, var(--color-first--active));
+}
+
+.button_type_invert {
+  border: 1px solid var(--color-first);
+  border-color: var(--color-first);
+  color: var(--color-first-text, var(--color-first));
+  background: radial-gradient(
+      circle,
+      var(--color-first--hover) 1%,
+      var(--color-second--hover) 1%
+    )
+    center/0;
+  transition: background 0.4s;
+}
+
+.button_type_invert:hover:enabled,
+.button_type_invert:focus:enabled{
+  background: radial-gradient(
+      circle,
+      var(--color-first--hover) 1%,
+      var(--color-second--hover) 1%
+    )
+    center/15000%;
+  border-color: var(--color-first--hover);
+  color: var(--color-second--hover);
+}
+
+.button_type_invert:active:enabled {
+  background: radial-gradient(
+      circle,
+      var(--color-first--active) 1%,
+      var(--color-first--active) 1%
+    )
+    center/15000%;
+  border-color: var(--color-first--active);
+  color: var(--color-second--active);
+}
+
+.button_type_invert:disabled {
+  border-color: var(--color-first);
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.button_type_invert svg {
+  fill: var(--color-first-text, var(--color-first));
+}
+
+.button_type_invert:hover:enabled svg,
+.button_type_invert:focus:enabled svg {
+  fill: var(--color-second--hover);
+}
+
+.button_type_flat {
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--color-first-text, var(--color-first));
+}
+
+.button_type_flat:hover:enabled,
+.button_type_flat:focus:enabled {
+  border-color: var(--color-second--hover);
+  background: var(--color-second--hover);
+  color: var(--color-first-text--hover, var(--color-first--hover));
+}
+
+.button_type_flat:active:enabled {
+  border-color: var(--color-second--active);
+  background: var(--color-second--active);
+  color: var(--color-first-text--active, var(--color-first--active));
+}
+
+.button_type_flat:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.button_type_flat svg {
+  fill: var(--color-first-text, var(--color-first));
+}
+
+.button_type_flat:hover:enabled svg,
+.button_type_flat:focus:enabled svg {
+  fill: var(--color-first-text--hover, var(--color-first--hover));
+}
+
+.button_type_flat:enabled:active svg {
+  fill: var(--color-first-text--active, var(--color-first--active));
+}
+
+.button_size_large {
+  min-width: 140px;
+}

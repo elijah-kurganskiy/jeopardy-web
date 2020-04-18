@@ -1,13 +1,73 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap');
+@import-normalize;
+html {
+  font-size: 10px;
+}
+
+
+* {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
 }
+html,
+body,
+#root {
+  height: 100%;
+}
+
+
+:root {
+  --color-primary-main-raw: 92, 141, 246;
+  --color-primary-main: rgb(var(--color-primary-main-raw));
+  --color-primary-main-faded: rgba(var(--color-primary-main-raw), 0.5);
+  --color-primary-light: #759bf7;
+  --color-primary-dark: #5083f0;
+  --color-primary-disable: rgba(92, 141, 246, 0.4);
+
+  --color-secondary-main: #cfd9ed;
+  --color-secondary-light: #a4b3d0;
+  --color-secondary-dark: #8e9fc0;
+  --color-secondary-disable: rgba(207, 217, 237, 0.4);
+
+  --color-common-white: #ffffff;
+
+  --color-error: #f3618d;
+
+  --color-customer-select: #eef2f8;
+  --color-table-submit: #e2f0ff;
+  --color-table-hover: rgba(92, 141, 246, 0.1);
+  --color-table-delete: rgba(147, 160, 186, 0.1);
+
+  --color-text-primary: #454b57;
+
+  --color-text-secondary-main: #93a0ba;
+  --color-text-secondary-light: #7c8cad;
+  --color-text-secondary-dark: #65769a;
+  --color-text-secondary-disable: rgba(147, 160, 186, 0.4);
+
+  --color-text-error: #f3618d;
+
+  --color-borders-primary: #dbe3f3;
+  --color-borders-error: rgba(243, 97, 141, 0.4);
+
+  --color-shadow-primary: rgba(92, 141, 246, 0.2);
+  --color-shadow-error: rgba(243, 97, 141, 0.2);
+
+  --color-borders-delete: rgba(69, 75, 87, 0.1);
+
+  --color-bg-main-raw: 248, 251, 255;
+  --color-bg-main: rgb(var(--color-bg-main-raw));
+  --color-bg-main-translucent: rgba(var(--color-bg-main-raw), 0.6);
+  --color-bg-surface: #dbe3f3;
+  --color-bg-light: #ffffff;
+
+  --color-icon-press: #7c8cad;
+
+  --font-family-primary: 'Lato', sans-serif;
+  --font-family-secondary: "Lato", sans-serif;
+}
+

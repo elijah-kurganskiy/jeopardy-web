@@ -1,0 +1,70 @@
+.typography {
+  font-family: var(--font-family-primary);
+}
+
+.typography_type_h6 {
+  font-size: 1.8em;
+  font-weight: 900;
+  letter-spacing: 0.08rem;
+  line-height: 1.67;
+}
+
+.typography_type_title {
+  font-size: 1.4em;
+  font-weight: bold;
+  letter-spacing: 0.08rem;
+  line-height: 1.29;
+}
+
+.typography_type_body {
+  font-size: 1.4em;
+  letter-spacing: 0.08rem;
+  font-weight: 400;
+  line-height: 1.29;
+}
+
+.typography_type_subtitle {
+  font-size: 1.4em;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  line-height: 1.43;
+}
+
+.typography_type_button {
+  line-height: 1.5;
+  font-size: 1.2em;
+  letter-spacing: 0.08rem;
+  font-weight: 800;
+}
+
+.typography_type_caption {
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.typography_type_label {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.typography_color_primary {
+  color: var(--color-text-primary);
+}
+
+.typography_color_secondary {
+  color: var(--color-text-secondary-main);
+}
+
+.typography_color_white {
+  color: var(--color-common-white);
+}
+
+.typography_color_error {
+  color: var(--color-text-error);
+}
+
+.typography_disabled {
+  pointer-events: none;
+}

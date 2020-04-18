@@ -1,0 +1,9 @@
+.paper {
+  border-radius: 0.6rem;
+  background-color: var(--color-bg-light);
+}
+
+.paper_color_primary {
+  box-shadow: 0 2px 24px 0 var(--color-shadow-primary);
+  border: solid 1px var(--color-borders-primary);
+}

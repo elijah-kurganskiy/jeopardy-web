@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { API_HOST } from "./config/server";
 import Login from "./screens/Login";
 
