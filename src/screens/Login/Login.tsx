@@ -1,25 +1,18 @@
 import { useMutation } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
 import cn from "classnames";
 import Paper from "components/Paper";
 import Typography, {
   TypographyColor,
   TypographyType,
 } from "components/Typography";
-import { useHistory } from "react-router-dom";
 import { FORM_ERROR } from "final-form";
 import React, { useCallback } from "react";
-import { ROUTE_LOBBY } from "../../const/routes";
-import LoginForm from "./components/LoginForm";
-import { FormValues } from "./components/LoginForm/LoginForm";
+import { useHistory } from "react-router-dom";
+import { ROUTE_LOBBY } from "const/routes";
+import LoginForm, { FormValues } from "./components/LoginForm";
+import { LOGIN_MUTATION } from "./Login.graphql";
 import styles from "./Login.module.css";
-const LOGIN_MUTATION = gql`
-  mutation Login($login: String!, $password: String!) {
-    login(data: { username: $login, password: $password }) {
-      accessToken
-    }
-  }
-`;
+
 export default function Login() {
   const history = useHistory();
   const [login] = useMutation(LOGIN_MUTATION);
