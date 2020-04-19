@@ -16,11 +16,10 @@ export type FormValues = {
 export default function LoginForm(props: {
   onSubmit: (values: FormValues) => void;
 }) {
-  const { form, handleSubmit, submitting, error } = useForm({
+  const { form, handleSubmit, submitting, submitError } = useForm({
     onSubmit: props.onSubmit,
-    subscription: { submitting: true, error: true },
+    subscription: { submitting: true, submitError: true },
   });
-  console.log(error);
   const username = useField("username", form, undefined, {
     value: true,
   });
@@ -38,7 +37,7 @@ export default function LoginForm(props: {
       >
         Username
       </Typography>
-      <Input {...username.input} type="text" />
+      <Input {...username.input} hasError={!!submitError} type="text" />
 
       <Typography
         typographyType={TypographyType.SUBTITLE}
@@ -52,8 +51,8 @@ export default function LoginForm(props: {
 
       <Input
         {...password.input}
-        hasError={!!error}
-        helperText={error}
+        hasError={!!submitError}
+        helperText={submitError}
         type="password"
       />
 
