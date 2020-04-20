@@ -1,18 +1,18 @@
 export enum TypographyType {
-  H6,
-  TITLE,
-  SUBTITLE,
-  BUTTON,
-  CAPTION,
-  BODY,
-  LABEL,
+  H6 = "h6",
+  TITLE = "title",
+  SUBTITLE = "subtitle",
+  BUTTON = "button",
+  CAPTION = "caption",
+  BODY = "body",
+  LABEL = "label",
 }
 
 export enum TypographyColor {
-  PRIMARY,
-  SECONDARY,
-  WHITE,
-  ERROR,
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+  WHITE = "white",
+  ERROR = "error",
 }
 
 export const TYPOGRAPHY_DEFAULT_TAG = "span";

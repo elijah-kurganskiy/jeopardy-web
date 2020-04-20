@@ -15,3 +15,7 @@
 .toolbar__button {
   margin-left: auto;
 }
+
+.roomList__item {
+  margin-bottom: 0.4rem;
+}

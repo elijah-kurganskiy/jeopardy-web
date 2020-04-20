@@ -1,0 +1,51 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  box-sizing: border-box;
+  min-width: 50rem;
+  padding: 2rem 4rem 3rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-common-white);
+}
+
+.dialog__toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.dialog__toolbar__close {
+  margin-right: -0.8rem;
+}
+
+.dialog__title {
+  margin-bottom: 0.8rem;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.form__field__input {
+  width: 35rem;
+  margin-top: 1.6rem;
+}
+
+.form__buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.6rem;
+  justify-content: flex-end;
+}
+
+.form__buttons__button {
+  width: 10rem;
+}

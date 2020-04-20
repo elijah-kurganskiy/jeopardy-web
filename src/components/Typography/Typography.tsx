@@ -3,14 +3,14 @@ import React from "react";
 import {
   TYPOGRAPHY_DEFAULT_TAG,
   TypographyColor,
-  TypographyType
+  TypographyType,
 } from "./Typography.const";
 import styles from "./Typography.module.css";
 import { TypographyProps } from "./Typography.types";
 
 class BaseTypography extends React.PureComponent<TypographyProps> {
   public static defaultProps = {
-    component: TYPOGRAPHY_DEFAULT_TAG
+    component: TYPOGRAPHY_DEFAULT_TAG,
   };
 
   public render() {

@@ -9,7 +9,7 @@ export class BaseButton extends React.PureComponent<Props> {
   public static defaultProps = {
     buttonType: ButtonType.FILLED,
     buttonColor: ButtonColor.PRIMARY,
-    size: ButtonSize.DEFAULT
+    size: ButtonSize.DEFAULT,
   };
 
   get colorClass() {

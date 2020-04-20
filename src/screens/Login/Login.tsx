@@ -21,7 +21,7 @@ export default function Login() {
   const onSubmit = useCallback(
     async (values: FormValues) => {
       try {
-        let { data, errors } = await login({
+        await login({
           variables: { login: values.username, password: values.password },
           update: (cache) => {
             cache.writeData({
@@ -31,10 +31,8 @@ export default function Login() {
             });
           },
         });
-        console.log({ data, errors });
         history.push(ROUTE_LOBBY);
       } catch (e) {
-        console.log(e.message);
         return {
           [FORM_ERROR]: e.message,
         };
