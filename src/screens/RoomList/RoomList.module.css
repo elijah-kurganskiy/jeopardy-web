@@ -1,0 +1,17 @@
+.roomList {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 2rem 3rem;
+  background-color: var(--color-bg-main);
+}
+
+.toolbar {
+  height: 8.4rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.toolbar__button {
+  margin-left: auto;
+}

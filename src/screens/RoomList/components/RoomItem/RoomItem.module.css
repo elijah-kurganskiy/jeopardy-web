@@ -1,0 +1,11 @@
+.room {
+  padding: 1.5rem 3rem;
+  border-radius: 0.6rem;
+  border: solid 0.1rem var(--color-borders-primary);
+  background-color: var(--color-common-white);
+}
+
+.room:hover {
+  background-color: var(--color-table-hover);
+  cursor: pointer;
+}
