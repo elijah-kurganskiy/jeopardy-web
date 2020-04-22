@@ -1,0 +1,24 @@
+.details {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 2.3rem 3rem;
+  background-color: var(--color-bg-main);
+}
+
+.toolbar {
+  height: 8.4rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.toolbar__title {
+  text-transform: uppercase;
+}
+
+.details__user {
+  max-width: 30%;
+  margin-bottom: 0.4rem;
+}

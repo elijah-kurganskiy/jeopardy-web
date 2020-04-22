@@ -1,26 +1,42 @@
 import { useMutation, useQuery } from "@apollo/react-hooks";
-import React, { useCallback, useState } from "react";
-import Button from "../../components/Button";
-import Typography, { TypographyType } from "../../components/Typography";
+import React, { useCallback } from "react";
+import Button from "components/Button";
+import Typography, { TypographyType } from "components/Typography";
+import { useDialogVisibleState } from "hooks";
 import AddRoomDialog from "./components/AddRoomDialog";
 import RoomItem from "./components/RoomItem";
-import { MUTATION_ADD_ROOM, QUERY_ROOM_LIST } from "./RoomList.graphql";
+import {
+  MUTATION_ADD_ROOM,
+  MUTATION_JOIN_TO_ROOM,
+  QUERY_ROOM_LIST,
+} from "./RoomList.graphql";
 import { updateRoomsCache } from "./RoomList.helper";
 import styles from "./RoomList.module.css";
-import { MutationAddRoom, QueryRooms } from "./RoomList.types";
+import {
+  MutationAddRoom,
+  MutationJoinToRoom,
+  QueryRooms,
+} from "./RoomList.types";
+import { useHistory } from "react-router-dom";
 
 function RoomList() {
-  const [dialogIsVisible, changeDialogVisible] = useState(false);
-  const openDialog = useCallback(() => changeDialogVisible(true), [
-    changeDialogVisible,
-  ]);
-  const closeDialog = useCallback(() => changeDialogVisible(false), [
-    changeDialogVisible,
-  ]);
+  const [dialogIsVisible, openDialog, closeDialog] = useDialogVisibleState();
+  const history = useHistory();
+  const [joinToRoomMutation] = useMutation<MutationJoinToRoom>(
+    MUTATION_JOIN_TO_ROOM
+  );
 
-  const onClickRoom = useCallback((id: number) => {
-    console.log("ON CLICK ", id);
-  }, []);
+  const onClickRoom = useCallback(
+    async (id) => {
+      await joinToRoomMutation({
+        variables: {
+          roomId: parseInt(id, 10),
+        },
+      });
+      history.push(`/rooms/${id}`);
+    },
+    [joinToRoomMutation, history]
+  );
 
   const { data, loading } = useQuery<QueryRooms>(QUERY_ROOM_LIST);
 

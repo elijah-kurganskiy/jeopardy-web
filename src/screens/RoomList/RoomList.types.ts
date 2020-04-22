@@ -10,3 +10,7 @@ export interface QueryRooms {
 export interface MutationAddRoom {
   createRoom: Room;
 }
+
+export interface MutationJoinToRoom {
+  joinToRoom: Room;
+}

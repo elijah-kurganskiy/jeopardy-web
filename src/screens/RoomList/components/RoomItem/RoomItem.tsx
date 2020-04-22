@@ -1,7 +1,11 @@
-import React, { useCallback } from "react";
-import Typography, { TypographyType } from "components/Typography";
-import styles from "./RoomItem.module.css";
 import cn from "classnames";
+import Typography, {
+  TypographyColor,
+  TypographyType,
+} from "components/Typography";
+import React, { useCallback } from "react";
+import styles from "./RoomItem.module.css";
+
 interface Props {
   id: number;
   name: string;
@@ -14,6 +18,13 @@ function RoomItem({ name, onClick, id, className }: Props) {
   return (
     <div onClick={onClickCallback} className={cn(className, styles.room)}>
       <Typography typographyType={TypographyType.TITLE}>{name}</Typography>
+      <Typography
+        className={styles.room_actionLabel}
+        typographyType={TypographyType.SUBTITLE}
+        typographyColor={TypographyColor.SECONDARY}
+      >
+        JOIN
+      </Typography>
     </div>
   );
 }

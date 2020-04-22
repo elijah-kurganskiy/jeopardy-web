@@ -21,9 +21,7 @@ body,
 :root {
   --z-index--modal: 10;
 
-  --color-primary-main-raw: 92, 141, 246;
-  --color-primary-main: rgb(var(--color-primary-main-raw));
-  --color-primary-main-faded: rgba(var(--color-primary-main-raw), 0.5);
+  --color-primary-main: rgb(92, 141, 246);
   --color-primary-light: #759bf7;
   --color-primary-dark: #5083f0;
   --color-primary-disable: rgba(92, 141, 246, 0.4);
@@ -37,7 +35,6 @@ body,
 
   --color-error: #f3618d;
 
-  --color-customer-select: #eef2f8;
   --color-table-submit: #e2f0ff;
   --color-table-hover: rgba(92, 141, 246, 0.1);
   --color-table-delete: rgba(147, 160, 186, 0.1);
@@ -59,11 +56,7 @@ body,
 
   --color-borders-delete: rgba(69, 75, 87, 0.1);
 
-  --color-bg-main-raw: 248, 251, 255;
-  --color-bg-main: rgb(var(--color-bg-main-raw));
-  --color-bg-main-translucent: rgba(var(--color-bg-main-raw), 0.6);
-  --color-bg-surface: #dbe3f3;
-  --color-bg-light: #ffffff;
+  --color-bg-main: rgb(248, 251, 255);
 
   --color-icon-press: #7c8cad;
 

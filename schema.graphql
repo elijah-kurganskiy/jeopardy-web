@@ -64,8 +64,8 @@ type Mutation {
   signUp(data: SignUpInput!): AuthTokens!
   logout: LogoutResult!
   createRoom(name: String!): Room!
-  joinToRoom(roomId: Float!): Room!
-  leaveRoom(roomId: Float!): Room!
+  joinToRoom(roomId: Int!): Room!
+  leaveRoom(roomId: Int!): Room!
 }
 
 type Player {
@@ -85,12 +85,13 @@ type Query {
   quiz(id: Float!): Quiz!
   round(id: Float!): Theme!
   question(id: Float!): Quiz!
+  room(id: ID!): Room!
   rooms: [Room!]!
 }
 
 type QuestionEntity {
   id: ID!
-  type: String!
+  type: String
   title: String
   path: String
   answer: String!

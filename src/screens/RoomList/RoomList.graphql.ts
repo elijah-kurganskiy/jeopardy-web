@@ -17,3 +17,16 @@ export const MUTATION_ADD_ROOM = gql`
     }
   }
 `;
+
+export const MUTATION_JOIN_TO_ROOM = gql`
+  mutation AddRoom($roomId: Int!) {
+    joinToRoom(roomId: $roomId) {
+      id
+      name
+      users {
+        id
+        username
+      }
+    }
+  }
+`;

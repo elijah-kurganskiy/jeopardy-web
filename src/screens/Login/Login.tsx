@@ -5,7 +5,7 @@ import Typography, {
   TypographyColor,
   TypographyType,
 } from "components/Typography";
-import { ROUTE_LOBBY } from "const/routes";
+import { ROUTE_ROOM_DETAIL } from "const/routes";
 import { FORM_ERROR } from "final-form";
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
@@ -31,7 +31,7 @@ export default function Login() {
             });
           },
         });
-        history.push(ROUTE_LOBBY);
+        history.push(ROUTE_ROOM_DETAIL);
       } catch (e) {
         return {
           [FORM_ERROR]: e.message,

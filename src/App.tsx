@@ -6,10 +6,10 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import "./App.css";
-import { ROUTE_LOBBY, ROUTE_LOGIN } from "./const/routes";
+import { ROUTE_ROOM_DETAIL, ROUTE_LOGIN, ROUTE_ROOMS } from "./const/routes";
 import { USER_QUERY } from "./graphql/queries/user";
 import Login from "./screens/Login";
+import RoomDetails from "./screens/RoomDetails";
 import RoomList from "./screens/RoomList";
 import PrivateRoute from "./utils/routes/PrivateRoute";
 
@@ -47,10 +47,13 @@ function App() {
         <Route path={ROUTE_LOGIN}>
           <Login />
         </Route>
-        <PrivateRoute path={ROUTE_LOBBY}>
+        <PrivateRoute path={ROUTE_ROOM_DETAIL}>
+          <RoomDetails />
+        </PrivateRoute>
+        <PrivateRoute exact={true} path={ROUTE_ROOMS}>
           <RoomList />
         </PrivateRoute>
-        <Redirect to={ROUTE_LOBBY} />
+        <Redirect to={ROUTE_ROOMS} />
       </Switch>
     </Router>
   );
