@@ -1,0 +1,24 @@
+.quiz__item {
+  padding: 1rem 3rem;
+  border-radius: 0.6rem;
+  border: solid 0.1rem var(--color-borders-primary);
+  background-color: var(--color-common-white);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz__item:hover {
+  cursor: pointer;
+  background-color: var(--color-table-hover);
+}
+
+.quiz__item_selected {
+  border-color: var(--color-primary-dark);
+  background-color: var(--color-table-hover);
+}
+
+.quizzes__item {
+  margin-bottom: 0.4rem;
+}

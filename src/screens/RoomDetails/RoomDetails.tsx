@@ -1,17 +1,35 @@
-import { useQuery } from "@apollo/react-hooks";
-import React from "react";
-import { useParams } from "react-router-dom";
+import { useMutation, useQuery } from "@apollo/react-hooks";
+import React, { useCallback, useState } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import Button from "components/Button";
 import Typography, {
   TypographyColor,
   TypographyType,
-} from "../../components/Typography";
+} from "components/Typography";
+import QuizList from "./components/QuizList";
 import UserItem from "./components/UserItem";
-import { QUERY_ROOM_DETAILS } from "./RoomDetails.graphql";
+import { MUTATION_START_GAME, QUERY_ROOM_DETAILS } from "./RoomDetails.graphql";
 import styles from "./RoomDetails.module.css";
-import { RoomDetailsQuery } from "./RoomDetails.types";
+import { MutationCreateGame, RoomDetailsQuery } from "./RoomDetails.types";
 
 function RoomDetails() {
   let { id } = useParams();
+  const history = useHistory();
+  const [selectedQuizId, selectQuiz] = useState<number | null>(null);
+  const [startGameMutation] = useMutation<MutationCreateGame>(
+    MUTATION_START_GAME
+  );
+  const startGame = useCallback(async () => {
+    const { data } = await startGameMutation({
+      variables: {
+        // @ts-ignore
+        roomId: parseInt(id, 10),
+        // @ts-ignore
+        quizId: parseInt(selectedQuizId, 10),
+      },
+    });
+    history.push(`/games/${data!.createGame!.id}`);
+  }, [startGameMutation, history, selectedQuizId, id]);
   const { loading, data } = useQuery<RoomDetailsQuery>(QUERY_ROOM_DETAILS, {
     variables: {
       id,
@@ -34,14 +52,26 @@ function RoomDetails() {
         >
           {name}
         </Typography>
+
+        <Button disabled={selectedQuizId == null} onClick={startGame}>
+          START GAME
+        </Button>
       </div>
-      {users.map((user) => (
-        <UserItem
-          className={styles.details__user}
-          key={user.id}
-          name={user.username}
-        />
-      ))}
+
+      <div className={styles.details__content}>
+        <div className={styles.details__users}>
+          {users.map((user) => (
+            <UserItem
+              className={styles.details__user}
+              key={user.id}
+              name={user.username}
+            />
+          ))}
+        </div>
+        <div className={styles.details__quizzes}>
+          <QuizList onSelectId={selectQuiz} selectedId={selectedQuizId} />
+        </div>
+      </div>
     </div>
   );
 }

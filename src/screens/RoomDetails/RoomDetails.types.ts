@@ -8,3 +8,9 @@ export interface RoomDetailsQuery {
     }>;
   };
 }
+
+export interface MutationCreateGame {
+  createGame: {
+    id: number;
+  };
+}

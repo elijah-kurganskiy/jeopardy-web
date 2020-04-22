@@ -12,3 +12,11 @@ export const QUERY_ROOM_DETAILS = gql`
     }
   }
 `;
+
+export const MUTATION_START_GAME = gql`
+  mutation StartNewGame($roomId: Int!, $quizId: Int!) {
+    createGame(data: { roomId: $roomId, quizId: $quizId }) {
+      id
+    }
+  }
+`;

@@ -1,7 +1,7 @@
 input AnswerInput {
   userId: Float!
   answer: String!
-  gameId: Float!
+  gameId: Int!
 }
 
 type AuthTokens {
@@ -11,12 +11,12 @@ type AuthTokens {
 
 input CaptureQuestionInput {
   userId: Float!
-  gameId: Float!
+  gameId: Int!
 }
 
 input CreateNewGameInput {
-  roomId: Float!
-  quizId: Float!
+  roomId: Int!
+  quizId: Int!
 }
 
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.
@@ -80,7 +80,7 @@ type Query {
   user(id: Float!): User!
   me: User!
   games: [Game!]!
-  game(id: Float!): Game!
+  game(id: Int!): Game!
   quizzes: [Quiz!]!
   quiz(id: Float!): Quiz!
   round(id: Float!): Theme!
@@ -119,13 +119,13 @@ type Round {
 
 input SelectFirstPlayerInput {
   userId: Float!
-  gameId: Float!
+  gameId: Int!
 }
 
 input SelectQuestionInput {
   userId: Float!
-  questionId: Float!
-  gameId: Float!
+  questionId: Int!
+  gameId: Int!
 }
 
 input SignUpInput {

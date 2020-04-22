@@ -12,13 +12,27 @@
   align-items: center;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .toolbar__title {
   text-transform: uppercase;
 }
 
+.details__content {
+  display: flex;
+  flex-direction: row;
+}
+
+.details__users {
+  flex: 0.5;
+}
+
 .details__user {
   max-width: 30%;
   margin-bottom: 0.4rem;
+}
+
+.details__quizzes {
+  flex: 0.5;
 }
