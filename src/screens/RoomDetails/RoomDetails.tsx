@@ -8,9 +8,17 @@ import Typography, {
 } from "components/Typography";
 import QuizList from "./components/QuizList";
 import UserItem from "./components/UserItem";
-import { MUTATION_START_GAME, QUERY_ROOM_DETAILS } from "./RoomDetails.graphql";
+import {
+  MUTATION_START_GAME,
+  QUERY_ROOM_DETAILS,
+  SUBSCRIPTION_ROOM_USERS,
+} from "./RoomDetails.graphql";
 import styles from "./RoomDetails.module.css";
-import { MutationCreateGame, RoomDetailsQuery } from "./RoomDetails.types";
+import {
+  MutationCreateGame,
+  RoomDetailsQuery,
+  UserUpdatesMutation,
+} from "./RoomDetails.types";
 
 function RoomDetails() {
   let { id } = useParams();
@@ -30,9 +38,28 @@ function RoomDetails() {
     });
     history.push(`/games/${data!.createGame!.id}`);
   }, [startGameMutation, history, selectedQuizId, id]);
-  const { loading, data } = useQuery<RoomDetailsQuery>(QUERY_ROOM_DETAILS, {
-    variables: {
-      id,
+  const { loading, data, subscribeToMore } = useQuery<RoomDetailsQuery>(
+    QUERY_ROOM_DETAILS,
+    {
+      variables: {
+        id,
+      },
+    }
+  );
+
+  subscribeToMore<UserUpdatesMutation>({
+    document: SUBSCRIPTION_ROOM_USERS,
+    // @ts-ignore
+    variables: { roomId: parseInt(id, 10) },
+    updateQuery: (prev, { subscriptionData }) => {
+      if (!subscriptionData.data) return prev;
+      const users = subscriptionData.data.onChangeUsersInRoom;
+      return Object.assign({}, prev, {
+        room: {
+          ...prev.room,
+          users: users,
+        },
+      });
     },
   });
 

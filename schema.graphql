@@ -133,6 +133,10 @@ input SignUpInput {
   password: String!
 }
 
+type Subscription {
+  onChangeUsersInRoom(roomId: Int!): [User!]!
+}
+
 type Theme {
   id: ID!
   name: String!

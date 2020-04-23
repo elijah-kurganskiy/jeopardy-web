@@ -9,6 +9,13 @@ export interface RoomDetailsQuery {
   };
 }
 
+export interface UserUpdatesMutation {
+  onChangeUsersInRoom: Array<{
+    id: number;
+    username: string;
+  }>;
+}
+
 export interface MutationCreateGame {
   createGame: {
     id: number;
