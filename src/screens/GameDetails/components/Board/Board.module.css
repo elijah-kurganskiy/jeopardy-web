@@ -1,0 +1,13 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10% 10%;
+}
+
+.board__theme {
+  flex: 1;
+  align-items: center;
+  height: 100%;
+  margin: 1rem 0;
+}
