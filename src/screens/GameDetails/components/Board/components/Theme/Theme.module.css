@@ -1,0 +1,19 @@
+.theme {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.theme__title {
+  width: 300px;
+}
+
+.theme__question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-left: 0.6rem;
+  margin-right: 0.7rem;
+  height: 100%;
+}
