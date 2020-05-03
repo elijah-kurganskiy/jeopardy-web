@@ -6,12 +6,22 @@ interface GameState {
   selectedQuestionId?: number;
   openedQuestionsIds: number[];
   events: GameEvent[];
+  answeringPlayerId?: number;
+  answeredPlayerIds: [];
+  currentPlayerId: number;
 }
 
 export interface QueryGame {
   game: GameType & {
     quiz: QuizType;
     state: GameState;
+  };
+}
+
+export interface QueryCurrentUser {
+  me: {
+    id: number;
+    username: string;
   };
 }
 

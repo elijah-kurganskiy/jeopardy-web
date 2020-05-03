@@ -16,3 +16,7 @@
 .question_hidden {
   visibility: hidden;
 }
+
+.question_disabled {
+  pointer-events: none;
+}

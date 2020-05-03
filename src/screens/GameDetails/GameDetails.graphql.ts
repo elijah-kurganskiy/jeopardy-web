@@ -6,8 +6,16 @@ export const GAME_STATE_FRAGMENT = gql`
     stateName
     currentRoundId
     selectedQuestionId
+
     answeredPlayerIds
     openedQuestionsIds
+
+    answeringPlayerId
+    currentPlayerId
+
+    answeringPlayer {
+      username
+    }
     events {
       createdAt
       finishedAt
@@ -86,4 +94,13 @@ export const MUTATION_ANSWER_QUESTION = gql`
     }
   }
   ${GAME_STATE_FRAGMENT}
+`;
+
+export const QUERY_CURRENT_USER = gql`
+  query CurrentUser {
+    me {
+      id
+      username
+    }
+  }
 `;

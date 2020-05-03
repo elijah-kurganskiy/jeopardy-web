@@ -15,6 +15,7 @@ import {
   useOnCaptureQuestion,
   useOnSelectQuestion,
   useSelectedQuestion,
+  useUserQuery,
 } from "./GameDetails.helper";
 import styles from "./GameDetails.module.css";
 
@@ -22,7 +23,7 @@ export default function GameDetails() {
   let { id } = useParams();
   const gameId = parseInt(id!, 10);
   const { data, loading, error } = useGameQuery(gameId);
-
+  const user = useUserQuery();
   const currentRound = useCurrentRound(data);
   const currentQuestion = useSelectedQuestion(data);
   const selectQuestion = useOnSelectQuestion(gameId);
@@ -45,6 +46,7 @@ export default function GameDetails() {
     ...data?.game.state!,
     currentRound,
     currentQuestion,
+    user,
   };
 
   return (

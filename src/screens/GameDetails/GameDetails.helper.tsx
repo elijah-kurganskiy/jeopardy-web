@@ -5,9 +5,14 @@ import {
   MUTATION_CAPTURE_QUESTION,
   MUTATION_SELECT_QUESTION,
   MUTATION_UPDATE_STATE,
+  QUERY_CURRENT_USER,
   QUERY_GAME,
 } from "./GameDetails.graphql";
-import { QueryGame, SubscriptionOnGameStateChange } from "./GameDetails.types";
+import {
+  QueryCurrentUser,
+  QueryGame,
+  SubscriptionOnGameStateChange,
+} from "./GameDetails.types";
 
 export function useCurrentRound(data?: QueryGame) {
   const rounds = data?.game.quiz.rounds || [];
@@ -60,6 +65,14 @@ export function useGameQuery(gameId?: number) {
     });
   }, [subscribeToMore, gameId]);
   return data;
+}
+
+export function useUserQuery() {
+  const { data, loading } = useQuery<QueryCurrentUser>(QUERY_CURRENT_USER);
+  if (loading) {
+    return undefined;
+  }
+  return data?.me;
 }
 
 export function useOnSelectQuestion(gameId: number) {

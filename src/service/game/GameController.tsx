@@ -11,7 +11,16 @@ export interface GameState {
   stateName: string;
   currentRound: RoundType;
   currentQuestion?: QuestionType;
+  answeredPlayerIds: number[];
+  currentPlayerId: number;
   events: GameEvent[];
+  answeringPlayerId?: number;
+  answeringPlayer?: {
+    username: string;
+  };
+  user?: {
+    id: number;
+  };
   openedQuestionsIds: number[];
 }
 

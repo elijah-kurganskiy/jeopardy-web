@@ -16,6 +16,11 @@
   min-width: 10rem;
 }
 
+.dialog__stubText {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 .dialog__input {
   margin-top: 2rem;
 }

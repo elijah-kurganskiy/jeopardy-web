@@ -16,14 +16,16 @@ interface QuestionProps {
 const Question = React.memo(
   ({ question: { id, price }, className }: QuestionProps) => {
     const { selectQuestion } = useGameController();
-    const { openedQuestionsIds } = useGameState();
+    const { openedQuestionsIds, user, currentPlayerId } = useGameState();
     const hidden = openedQuestionsIds.includes(id);
     const onClick = useCallback(() => selectQuestion(id), [selectQuestion, id]);
+    const disableSelecting = user?.id !== currentPlayerId;
     return (
       <div
         onClick={onClick}
         className={cn(
           className,
+          disableSelecting && styles.question_disabled,
           hidden && styles.question_hidden,
           styles.question
         )}
