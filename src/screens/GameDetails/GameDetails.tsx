@@ -1,26 +1,47 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import styles from "./GameDetails.module.css";
-import { useQuery } from "@apollo/react-hooks";
-import { QueryGame } from "./GameDetails.types";
-import { QUERY_GAME } from "./GameDetails.graphql";
+import { GameController, GameControllerProvider } from "service/game";
 import Board from "./components/Board";
+import QuestionModal from "./components/QuestionModal";
+import {
+  useCurrentRound,
+  useGameQuery,
+  useOnCaptureQuestion,
+  useOnSelectQuestion,
+  useSelectedQuestion,
+} from "./GameDetails.helper";
+import styles from "./GameDetails.module.css";
+
 export default function GameDetails() {
   let { id } = useParams();
-  const { data, loading, error } = useQuery<QueryGame>(QUERY_GAME, {
-    variables: {
-      gameId: parseInt(id!, 10),
-    },
-  });
+  const gameId = parseInt(id!, 10);
+  const { data, loading, error } = useGameQuery(gameId);
+
+  const currentRound = useCurrentRound(data);
+  const currentQuestion = useSelectedQuestion(data);
+  const selectQuestion = useOnSelectQuestion(gameId);
+  const captureQuestion = useOnCaptureQuestion(gameId);
   if (loading) {
     return <div>Loading...</div>;
   }
   if (error) {
-    console.log(error);
+    return <div>Error: {JSON.stringify(error)}</div>;
   }
+
+  const gameController: GameController = {
+    selectQuestion,
+    captureQuestion,
+  };
+
   return (
     <div className={styles.game}>
-      <Board round={data!.game.quiz!.rounds[0]!} />
+      <GameControllerProvider controller={gameController}>
+        <Board round={currentRound} />
+        <QuestionModal
+          isOpen={!!currentQuestion}
+          text={currentQuestion?.title}
+        />
+      </GameControllerProvider>
     </div>
   );
 }
