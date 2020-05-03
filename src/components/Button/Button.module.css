@@ -10,8 +10,8 @@
   justify-content: center;
 }
 
-.button span {
-  padding: 0.3rem 0.4rem 0.3rem 0.4rem;
+.button .button__text {
+  padding: 0.3rem 2rem 0.3rem 2rem;
 }
 
 .button:not(span) {
@@ -23,27 +23,27 @@
 }
 
 .button_color_primary {
-  --color-first: var(--color-accent-week-up);
-  --color-first--hover: var(--color-accent-week);
-  --color-first--active: var(--color-accent-strong);
+  --color-first: var(--color-accent-strong);
+  --color-first--hover: var(--color-accent-strong-down);
+  --color-first--active: var(--color-accent-strong-up);
 
-  --color-second: var(--color-base-week);
-  --color-second--hover: var(--color-base-week);
-  --color-second--active: var(--color-base-week);
+  --color-second: var(--color-text-base-weak);
+  --color-second--hover: var(--color-text-base-weak);
+  --color-second--active: var(--color-text-base-weak);
 }
 
 .button_color_secondary {
-  --color-first: var(--color-faint-week);
-  --color-first--hover: var(--color-faint-week-up);
-  --color-first--active: var(--color-faint-strong);
+  --color-first: var(--color-accent-weak);
+  --color-first--hover: var(--color-accent-weak-down);
+  --color-first--active: var(--color-accent-weak-up);
 
-  --color-first-text: var(--color-faint-week-up);
-  --color-first-text--hover: var(--color-faint-week-up);
-  --color-first-text--active: var(--color-faint-week);
+  --color-first-text: var(--color-text-faint-weak);
+  --color-first-text--hover: var(--color-text-faint-weak-down);
+  --color-first-text--active: var(--color-text-faint-weak-up);
 
-  --color-second: var(--color-base-week);
-  --color-second--hover: var(--color-base-week);
-  --color-second--active: var(--color-base-week);
+  --color-second: var(--color-accent-strong);
+  --color-second--hover: var(--color-accent-strong-down);
+  --color-second--active: var(--color-accent-strong-up);
 }
 
 .button_type_filled {
@@ -53,14 +53,14 @@
   color: var(--color-second);
 }
 
-.button_type_filled:hover:enabled,
-.button_type_filled:focus:enabled {
+.button_type_filled:hover,
+.button_type_filled:focus {
   background-color: var(--color-first--hover);
   border-color: var(--color-first--hover);
   color: var(--color-second--hover);
 }
 
-.button_type_filled:active:enabled {
+.button_type_filled:active {
   background-color: var(--color-first--active);
   border-color: var(--color-first--active);
   color: var(--color-second--active);
@@ -84,13 +84,13 @@
   color: var(--color-first-text, var(--color-first));
 }
 
-.button_type_outline:enabled:hover,
-.button_type_outline:enabled:focus {
+.button_type_outline:hover,
+.button_type_outline:focus {
   border-color: var(--color-first--hover);
   color: var(--color-first-text--hover, var(--color-first--hover));
 }
 
-.button_type_outline:active:enabled {
+.button_type_outline:active {
   border-color: var(--color-first--active);
   color: var(--color-first-text--active, var(--color-first--active));
 }
@@ -105,80 +105,28 @@
   fill: var(--color-first-text, var(--color-first));
 }
 
-.button_type_outline:enabled:hover svg,
-.button_type_outline:enabled:focus svg {
+.button_type_outline:hover svg,
+.button_type_outline:focus svg {
   fill: var(--color-first-text--hover, var(--color-first--hover));
 }
 
-.button_type_outline:active:enabled svg {
+.button_type_outline:active svg {
   fill: var(--color-first-text--active, var(--color-first--active));
 }
-
-.button_type_invert {
-  border: 1px solid var(--color-first);
-  border-color: var(--color-first);
-  color: var(--color-first-text, var(--color-first));
-  background: radial-gradient(
-      circle,
-      var(--color-first--hover) 1%,
-      var(--color-second--hover) 1%
-    )
-    center/0;
-  transition: background 0.4s;
-}
-
-.button_type_invert:hover:enabled,
-.button_type_invert:focus:enabled {
-  background: radial-gradient(
-      circle,
-      var(--color-first--hover) 1%,
-      var(--color-second--hover) 1%
-    )
-    center/15000%;
-  border-color: var(--color-first--hover);
-  color: var(--color-second--hover);
-}
-
-.button_type_invert:active:enabled {
-  background: radial-gradient(
-      circle,
-      var(--color-first--active) 1%,
-      var(--color-first--active) 1%
-    )
-    center/15000%;
-  border-color: var(--color-first--active);
-  color: var(--color-second--active);
-}
-
-.button_type_invert:disabled {
-  border-color: var(--color-first);
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-.button_type_invert svg {
-  fill: var(--color-first-text, var(--color-first));
-}
-
-.button_type_invert:hover:enabled svg,
-.button_type_invert:focus:enabled svg {
-  fill: var(--color-second--hover);
-}
-
 .button_type_flat {
   border: 1px solid transparent;
   background-color: transparent;
   color: var(--color-first-text, var(--color-first));
 }
 
-.button_type_flat:hover:enabled,
-.button_type_flat:focus:enabled {
+.button_type_flat:hover,
+.button_type_flat:focus {
   border-color: var(--color-second--hover);
   background: var(--color-second--hover);
   color: var(--color-first-text--hover, var(--color-first--hover));
 }
 
-.button_type_flat:active:enabled {
+.button_type_flat:active {
   border-color: var(--color-second--active);
   background: var(--color-second--active);
   color: var(--color-first-text--active, var(--color-first--active));
@@ -193,15 +141,11 @@
   fill: var(--color-first-text, var(--color-first));
 }
 
-.button_type_flat:hover:enabled svg,
-.button_type_flat:focus:enabled svg {
+.button_type_flat:hover svg,
+.button_type_flat:focus svg {
   fill: var(--color-first-text--hover, var(--color-first--hover));
 }
 
-.button_type_flat:enabled:active svg {
+.button_type_flat:active svg {
   fill: var(--color-first-text--active, var(--color-first--active));
-}
-
-.button_size_large {
-  min-width: 140px;
 }

@@ -6,6 +6,6 @@ export interface TypographyProps
   children?: React.ReactNode;
   className?: string;
   type?: "h6" | "title" | "subtitle" | "button" | "caption";
-  color?: "primary" | "secondary" | "white" | "error";
+  color?: "primary" | "secondary" | "white" | "error" | "inherit";
   forwardedRef?: React.Ref<HTMLElement>;
 }

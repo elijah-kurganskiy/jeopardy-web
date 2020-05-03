@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Typography from "components/Typography";
 import React from "react";
-import { ButtonColor, ButtonSize, ButtonType } from "./Button.const";
+import { ButtonColor, ButtonType } from "./Button.const";
 import styles from "./Button.module.css";
 import { Props } from "./Button.types";
 
@@ -9,10 +9,9 @@ export class BaseButton extends React.PureComponent<Props> {
   public static defaultProps = {
     buttonType: ButtonType.FILLED,
     buttonColor: ButtonColor.PRIMARY,
-    size: ButtonSize.DEFAULT,
   };
 
-  get colorClass() {
+  private get colorClass() {
     const { buttonColor } = this.props;
     switch (buttonColor) {
       case ButtonColor.PRIMARY:
@@ -25,23 +24,13 @@ export class BaseButton extends React.PureComponent<Props> {
     }
   }
 
-  get sizeClass() {
-    const { size } = this.props;
-    if (size === ButtonSize.LARGE) {
-      return styles.button_size_large;
-    }
-    return null;
-  }
-
-  get typeClass() {
+  private get typeClass() {
     const { buttonType } = this.props;
     switch (buttonType) {
       case ButtonType.FILLED:
         return styles.button_type_filled;
       case ButtonType.OUTLINED:
         return styles.button_type_outline;
-      case ButtonType.INVERT:
-        return styles.button_type_invert;
       case ButtonType.FLAT:
         return styles.button_type_flat;
       default:
@@ -49,7 +38,7 @@ export class BaseButton extends React.PureComponent<Props> {
     }
   }
 
-  public renderStartIcon() {
+  private renderStartIcon() {
     if (this.props.startIcon) {
       const Icon = this.props.startIcon;
       return <Icon />;
@@ -57,7 +46,7 @@ export class BaseButton extends React.PureComponent<Props> {
     return null;
   }
 
-  public renderEndIcon() {
+  private renderEndIcon() {
     if (this.props.endIcon) {
       const Icon = this.props.endIcon;
       return <Icon />;
@@ -82,14 +71,18 @@ export class BaseButton extends React.PureComponent<Props> {
           styles.button,
           this.typeClass,
           this.colorClass,
-          this.sizeClass,
           className
         )}
         {...rest}
       >
         {this.renderStartIcon()}
         {children && (
-          <Typography type="button" component="span">
+          <Typography
+            className={styles.button__text}
+            type="button"
+            component="span"
+            color="inherit"
+          >
             {children}
           </Typography>
         )}

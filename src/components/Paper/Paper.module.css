@@ -1,9 +1,9 @@
 .paper {
   border-radius: 0.6rem;
-  background-color: var(--color-base-week-down);
+  background-color: var(--color-back-base-weak);
 }
 
 .paper_color_primary {
   box-shadow: 0 2px 24px 0 var(--color-shadow-primary);
-  border: solid 1px var(--color-faint-strong-up);
+  border: solid 1px var(--color-line-faint-weak);
 }

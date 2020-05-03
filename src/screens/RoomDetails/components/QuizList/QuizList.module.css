@@ -1,8 +1,8 @@
 .quiz__item {
   padding: 1rem 3rem;
   border-radius: 0.6rem;
-  border: solid 0.1rem var(--color-faint-strong-up);
-  background-color: var(--color-base-week);
+  border: solid 0.1rem var(--color-line-faint-weak);
+  background-color: var(--color-back-base-weak);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11,12 +11,11 @@
 
 .quiz__item:hover {
   cursor: pointer;
-  background-color: var(--color-faint-strong-up);
+  background-color: var(--color-back-base-weak-up);
 }
 
 .quiz__item_selected {
-  border-color: var(--color-accent-strong);
-  background-color: var(--color-faint-strong-up);
+  border-color: var(--color-line-accent-strong);
 }
 
 .quizzes__item {

@@ -23,28 +23,66 @@ body,
 :root {
   --z-index--modal: 10;
 
-  --color-accent-week-up: rgb(92, 141, 246);
-  --color-accent-week: #759bf7;
-
-  --color-accent-strong: #5083f0;
-  --color-accent-strong-down: rgba(92, 141, 246, 0.4);
-
-  --color-faint-week-up: #a4b3d0;
-  --color-faint-week: #cfd9ed;
-  --color-faint-week-down: rgba(207, 217, 237, 0.4);
-
-  --color-faint-strong-up: rgba(92, 141, 246, 0.1);
-  --color-faint-strong: #8e9fc0;
-
-  --color-base-week: #ffffff;
-  --color-base-week-down: rgb(248, 251, 255);
-
-  --color-base-strong: #050505;
-
-  --color-error: #f3618d;
-
   --color-shadow-primary: rgba(92, 141, 246, 0.2);
 
   --font-family-primary: "Lato", sans-serif;
   --font-family-secondary: "Lato", sans-serif;
+
+  /*BASE*/
+
+  --color-base-strong: #050505;
+  --color-base-weak: #f8fbff;
+
+  --color-back-base-weak-up: #e9eff7;
+  --color-back-base-weak: #f8fbff;
+
+  --color-text-base-weak: #f8fbff;
+
+  /*FAINT*/
+  --color-faint-strong: #8994a6;
+  --color-faint-strong-down: #a5adbb;
+
+  --color-faint-weak-up: #eceef5;
+  --color-faint-weak: #f6f8fb;
+
+  --color-text-faint-strong: #454b57;
+
+  --color-text-faint-weak-up: #8193b8;
+  --color-text-faint-weak: #93a0ba;
+  --color-text-faint-weak-down: #a9b1c2;
+
+  --color-line-faint-weak: #dbe3f3;
+
+  /*ACCENT*/
+  --color-accent-strong-up: #0054bf;
+  --color-accent-strong: #0070ff;
+  --color-accent-strong-down: #2e8aff;
+
+  --color-accent-weak-up: #d4e6fc;
+  --color-accent-weak: #ebf4ff;
+  --color-accent-weak-down: #f2f6fa;
+
+  --color-text-accent-strong: #0070ff;
+
+  --color-line-accent-strong: #0070ff;
+
+  /*COMPLEMENT*/
+  --color-complement-strong: #8889e2;
+  --color-complement-weak: #eeecfd;
+
+  /*CRITIC*/
+  --color-critic-strong: #f74545;
+  --color-critic-weak: #fdeded;
+
+  --color-line-critic-strong: #f74545;
+
+  --color-text-critic-strong: #f74545;
+
+  /*WARNING*/
+  --color-warning-strong: #f8ae4f;
+  --color-warning-weak: #fcebcf;
+
+  /*SUCCESS*/
+  --color-success-strong: #27ae60;
+  --color-success-weak: #def8e9;
 }

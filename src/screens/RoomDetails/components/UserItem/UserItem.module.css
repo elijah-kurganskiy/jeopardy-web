@@ -1,8 +1,8 @@
 .room {
   padding: 1rem 3rem;
   border-radius: 0.6rem;
-  border: solid 0.1rem var(--color-faint-strong-up);
-  background-color: var(--color-base-week);
+  border: solid 0.1rem var(--color-line-faint-weak);
+  background-color: var(--color-base-weak);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -11,6 +11,7 @@ import { TypographyProps } from "./Typography.types";
 class BaseTypography extends React.PureComponent<TypographyProps> {
   public static defaultProps = {
     component: TYPOGRAPHY_DEFAULT_TAG,
+    color: "primary",
   };
 
   public render() {

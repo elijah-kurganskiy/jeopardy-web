@@ -2,7 +2,7 @@
   box-sizing: border-box;
   height: 100%;
   padding: 2rem 3rem;
-  background-color: var(--color-base-week-down);
+  background-color: var(--color-base-weak);
 }
 
 .toolbar {

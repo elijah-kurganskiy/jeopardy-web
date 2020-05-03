@@ -1,12 +1,6 @@
-export enum ButtonSize {
-  DEFAULT,
-  LARGE,
-}
-
 export enum ButtonType {
   FILLED,
   OUTLINED,
-  INVERT,
   FLAT,
 }
 

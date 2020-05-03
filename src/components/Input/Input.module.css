@@ -24,15 +24,15 @@
 }
 
 .inputContainer_color_primary {
-  --color-first: var(--color-faint-strong-up);
-  --color-first--focus: var(--color-accent-week-up);
+  --color-first: var(--color-line-faint-weak);
+  --color-first--focus: var(--color-line-accent-strong);
 
-  --color-text-first: var(--color-faint-strong);
-  --color-text-second: var(--color-faint-week-up);
+  --color-text-first: var(--color-text-faint-strong);
+  --color-text-second: var(--color-text-faint-weak);
 }
 
 .inputContainer_error {
-  border-color: var(--color-error);
+  border-color: var(--color-line-critic-strong);
 }
 
 .inputContainer__helperText {
