@@ -1,5 +1,4 @@
 input AnswerInput {
-  userId: Float!
   answer: String!
   gameId: Int!
 }
@@ -10,7 +9,6 @@ type AuthTokens {
 }
 
 input CaptureQuestionInput {
-  userId: Float!
   gameId: Int!
 }
 
@@ -23,7 +21,7 @@ input CreateNewGameInput {
 scalar DateTime
 
 type Game {
-  id: ID!
+  id: Int!
   creator: User!
   state: GameState!
   createdAt: DateTime!
@@ -32,7 +30,7 @@ type Game {
 }
 
 type GameState {
-  id: ID!
+  id: Int!
   stateName: String!
   currentRoundId: Float!
   currentPlayerId: Float
@@ -56,7 +54,6 @@ type LogoutResult {
 
 type Mutation {
   createGame(data: CreateNewGameInput!): Game!
-  selectFirstPlayer(data: SelectFirstPlayerInput!): Game!
   selectQuestion(data: SelectQuestionInput!): Game!
   captureQuestion(data: CaptureQuestionInput!): Game!
   answer(data: AnswerInput!): Game!
@@ -69,7 +66,7 @@ type Mutation {
 }
 
 type Player {
-  id: ID!
+  id: Int!
   score: Float!
   game: Game!
   user: User!
@@ -90,7 +87,7 @@ type Query {
 }
 
 type QuestionEntity {
-  id: ID!
+  id: Int!
   type: String
   title: String
   path: String
@@ -100,30 +97,24 @@ type QuestionEntity {
 }
 
 type Quiz {
-  id: ID!
+  id: Int!
   name: String!
   rounds: [Round!]!
 }
 
 type Room {
-  id: ID!
+  id: Int!
   name: String!
   users: [User!]!
 }
 
 type Round {
-  id: ID!
+  id: Int!
   name: String!
   themes: [Theme!]!
 }
 
-input SelectFirstPlayerInput {
-  userId: Float!
-  gameId: Int!
-}
-
 input SelectQuestionInput {
-  userId: Float!
   questionId: Int!
   gameId: Int!
 }
@@ -134,18 +125,19 @@ input SignUpInput {
 }
 
 type Subscription {
+  onChangeGameState(gameId: Int!): GameState!
   onChangeUsersInRoom(roomId: Int!): [User!]!
 }
 
 type Theme {
-  id: ID!
+  id: Int!
   name: String!
   questions: [QuestionEntity!]!
   round: Round!
 }
 
 type User {
-  id: ID!
+  id: Int!
   username: String!
   firstName: String!
   lastName: String!
