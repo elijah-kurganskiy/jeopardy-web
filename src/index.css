@@ -21,44 +21,27 @@ body,
 :root {
   --z-index--modal: 10;
 
-  --color-primary-main: rgb(92, 141, 246);
-  --color-primary-light: #759bf7;
-  --color-primary-dark: #5083f0;
-  --color-primary-disable: rgba(92, 141, 246, 0.4);
+  --color-accent-week-up: rgb(92, 141, 246);
+  --color-accent-week: #759bf7;
 
-  --color-secondary-main: #cfd9ed;
-  --color-secondary-light: #a4b3d0;
-  --color-secondary-dark: #8e9fc0;
-  --color-secondary-disable: rgba(207, 217, 237, 0.4);
+  --color-accent-strong: #5083f0;
+  --color-accent-strong-down: rgba(92, 141, 246, 0.4);
 
-  --color-common-white: #ffffff;
+  --color-faint-week-up: #a4b3d0;
+  --color-faint-week: #cfd9ed;
+  --color-faint-week-down: rgba(207, 217, 237, 0.4);
+
+  --color-faint-strong-up: rgba(92, 141, 246, 0.1);
+  --color-faint-strong: #8e9fc0;
+
+  --color-base-week: #ffffff;
+  --color-base-week-down: rgb(248, 251, 255);
+
+  --color-base-strong: #050505;
 
   --color-error: #f3618d;
 
-  --color-table-submit: #e2f0ff;
-  --color-table-hover: rgba(92, 141, 246, 0.1);
-  --color-table-delete: rgba(147, 160, 186, 0.1);
-
-  --color-text-primary: #454b57;
-
-  --color-text-secondary-main: #93a0ba;
-  --color-text-secondary-light: #7c8cad;
-  --color-text-secondary-dark: #65769a;
-  --color-text-secondary-disable: rgba(147, 160, 186, 0.4);
-
-  --color-text-error: #f3618d;
-
-  --color-borders-primary: #dbe3f3;
-  --color-borders-error: rgba(243, 97, 141, 0.4);
-
   --color-shadow-primary: rgba(92, 141, 246, 0.2);
-  --color-shadow-error: rgba(243, 97, 141, 0.2);
-
-  --color-borders-delete: rgba(69, 75, 87, 0.1);
-
-  --color-bg-main: rgb(248, 251, 255);
-
-  --color-icon-press: #7c8cad;
 
   --font-family-primary: "Lato", sans-serif;
   --font-family-secondary: "Lato", sans-serif;

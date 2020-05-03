@@ -23,27 +23,27 @@
 }
 
 .button_color_primary {
-  --color-first: var(--color-primary-main);
-  --color-first--hover: var(--color-primary-light);
-  --color-first--active: var(--color-primary-dark);
+  --color-first: var(--color-accent-week-up);
+  --color-first--hover: var(--color-accent-week);
+  --color-first--active: var(--color-accent-strong);
 
-  --color-second: var(--color-common-white);
-  --color-second--hover: var(--color-common-white);
-  --color-second--active: var(--color-common-white);
+  --color-second: var(--color-base-week);
+  --color-second--hover: var(--color-base-week);
+  --color-second--active: var(--color-base-week);
 }
 
 .button_color_secondary {
-  --color-first: var(--color-secondary-main);
-  --color-first--hover: var(--color-secondary-light);
-  --color-first--active: var(--color-secondary-dark);
+  --color-first: var(--color-faint-week);
+  --color-first--hover: var(--color-faint-week-up);
+  --color-first--active: var(--color-faint-strong);
 
-  --color-first-text: var(--color-text-secondary-main);
-  --color-first-text--hover: var(--color-text-secondary-light);
-  --color-first-text--active: var(--color-text-secondary-dark);
+  --color-first-text: var(--color-faint-week-up);
+  --color-first-text--hover: var(--color-faint-week-up);
+  --color-first-text--active: var(--color-faint-week);
 
-  --color-second: var(--color-common-white);
-  --color-second--hover: var(--color-common-white);
-  --color-second--active: var(--color-common-white);
+  --color-second: var(--color-base-week);
+  --color-second--hover: var(--color-base-week);
+  --color-second--active: var(--color-base-week);
 }
 
 .button_type_filled {

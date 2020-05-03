@@ -9,7 +9,7 @@
   min-width: 50rem;
   padding: 2rem 4rem 3rem;
   border-radius: 0.5rem;
-  background-color: var(--color-common-white);
+  background-color: var(--color-base-week);
 }
 
 .dialog__toolbar {

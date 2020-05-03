@@ -1,8 +1,8 @@
 .room {
   padding: 1rem 3rem;
   border-radius: 0.6rem;
-  border: solid 0.1rem var(--color-borders-primary);
-  background-color: var(--color-common-white);
+  border: solid 0.1rem var(--color-faint-strong-up);
+  background-color: var(--color-base-week);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,7 +14,7 @@
 }
 
 .room:hover {
-  background-color: var(--color-table-hover);
+  background-color: var(--color-faint-strong-up);
   cursor: pointer;
 }
 

@@ -24,11 +24,11 @@
 }
 
 .inputContainer_color_primary {
-  --color-first: var(--color-borders-primary);
-  --color-first--focus: var(--color-primary-main);
+  --color-first: var(--color-faint-strong-up);
+  --color-first--focus: var(--color-accent-week-up);
 
-  --color-text-first: var(--color-text-primary);
-  --color-text-second: var(--color-text-secondary-main);
+  --color-text-first: var(--color-faint-strong);
+  --color-text-second: var(--color-faint-week-up);
 }
 
 .inputContainer_error {

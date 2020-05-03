@@ -50,19 +50,19 @@
 }
 
 .typography_color_primary {
-  color: var(--color-text-primary);
+  color: var(--color-faint-strong);
 }
 
 .typography_color_secondary {
-  color: var(--color-text-secondary-main);
+  color: var(--color-faint-week-up);
 }
 
 .typography_color_white {
-  color: var(--color-common-white);
+  color: var(--color-base-week);
 }
 
 .typography_color_error {
-  color: var(--color-text-error);
+  color: var(--color-error);
 }
 
 .typography_disabled {

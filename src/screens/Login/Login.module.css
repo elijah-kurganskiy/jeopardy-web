@@ -1,7 +1,7 @@
 .container {
     display: flex;
     justify-content: center;
-    background-color: var(--color-bg-main);
+    background-color: var(--color-base-week-down);
     height: 100%;
     align-items: center;
 }

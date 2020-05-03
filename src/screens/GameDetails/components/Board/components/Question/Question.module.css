@@ -1,16 +1,16 @@
 .question {
   padding: 1.5rem 3rem;
   border-radius: 0.6rem;
-  border: var(--color-borders-primary) 1px solid;
+  border: var(--color-faint-strong-up) 1px solid;
   cursor: pointer;
 }
 
 .question:hover {
-  border-color: var(--color-primary-dark);
+  border-color: var(--color-accent-strong);
 }
 
 .question:hover .question__price {
-  color: var(--color-primary-dark);
+  color: var(--color-accent-strong);
 }
 
 .question_hidden {
