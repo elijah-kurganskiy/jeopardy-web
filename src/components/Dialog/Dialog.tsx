@@ -1,8 +1,8 @@
-import React from "react";
+import cn from "classnames";
 import Modal from "components/Modal";
 import Paper from "components/Paper";
+import React from "react";
 import styles from "./Dialog.module.css";
-import cn from "classnames";
 
 interface Props {
   className?: string;

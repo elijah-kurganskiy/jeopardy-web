@@ -1,6 +1,6 @@
+import { isWithinInterval } from "date-fns";
 import React from "react";
 import { useGameState } from "service/game";
-import { isWithinInterval } from "date-fns";
 import { useTimer } from "../../../../hooks";
 import IncorrectAnswerDialog from "./components/IncorrectAnswerDialog";
 

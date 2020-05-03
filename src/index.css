@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap");
+
 @import-normalize;
 html {
   font-size: 10px;
@@ -12,6 +13,7 @@ html {
 body {
   margin: 0;
 }
+
 html,
 body,
 #root {

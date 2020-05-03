@@ -1,9 +1,10 @@
-import { ThemeType } from "types";
+import cn from "classnames";
+import Typography from "components/Typography";
 import React from "react";
-import Typography, { TypographyType } from "components/Typography";
+import { ThemeType } from "types";
 import Question from "./../Question";
 import styles from "./Theme.module.css";
-import cn from "classnames";
+
 interface ThemeProps {
   theme: ThemeType;
   className?: string;
@@ -12,10 +13,7 @@ interface ThemeProps {
 const Theme = ({ theme: { name, questions }, className }: ThemeProps) => {
   return (
     <div className={cn(styles.theme, className)}>
-      <Typography
-        typographyType={TypographyType.TITLE}
-        className={styles.theme__title}
-      >
+      <Typography type="title" className={styles.theme__title}>
         {name}
       </Typography>
       {questions.map((question) => (

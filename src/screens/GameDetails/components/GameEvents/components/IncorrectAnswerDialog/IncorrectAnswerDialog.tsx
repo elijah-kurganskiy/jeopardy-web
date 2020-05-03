@@ -1,5 +1,5 @@
 import Dialog from "components/Dialog";
-import Typography, { TypographyType } from "components/Typography";
+import Typography from "components/Typography";
 import React from "react";
 import { OnIncorrectAnswerPayload } from "types";
 
@@ -10,7 +10,7 @@ interface Props extends OnIncorrectAnswerPayload {
 const IncorrectAnswerDialog = ({ rightAnswer }: Props) => {
   return (
     <Dialog>
-      <Typography typographyType={TypographyType.H6}>{rightAnswer}</Typography>
+      <Typography type="h6">{rightAnswer}</Typography>
     </Dialog>
   );
 };

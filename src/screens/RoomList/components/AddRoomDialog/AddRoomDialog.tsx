@@ -2,10 +2,7 @@ import { ReactComponent as CloseIcon } from "assets/icons/ic-24-cross.svg";
 import Button, { ButtonColor, ButtonType } from "components/Button";
 import Input from "components/Input";
 import Modal from "components/Modal";
-import Typography, {
-  TypographyColor,
-  TypographyType,
-} from "components/Typography";
+import Typography from "components/Typography";
 import React from "react";
 import { useField, useForm } from "react-final-form-hooks";
 import styles from "./AddRoomDialog.module.css";
@@ -30,10 +27,7 @@ function AddRoomDialog({ isOpen, onClose, onSave }: Props) {
     <Modal className={styles.modal} isOpen={isOpen}>
       <div className={styles.dialog}>
         <div className={styles.dialog__toolbar}>
-          <Typography
-            className={styles.dialog__title}
-            typographyType={TypographyType.H6}
-          >
+          <Typography className={styles.dialog__title} type="h6">
             ADD ROOM
           </Typography>
           <Button
@@ -46,10 +40,7 @@ function AddRoomDialog({ isOpen, onClose, onSave }: Props) {
         </div>
         <form onSubmit={handleSubmit}>
           <div className={styles.form__field}>
-            <Typography
-              typographyType={TypographyType.SUBTITLE}
-              typographyColor={TypographyColor.SECONDARY}
-            >
+            <Typography type="subtitle" color="secondary">
               Name
             </Typography>
             <Input {...roomName.input} className={styles.form__field__input} />

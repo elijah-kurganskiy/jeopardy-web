@@ -18,8 +18,8 @@ class BaseTypography extends React.PureComponent<TypographyProps> {
       component,
       className,
       children,
-      typographyColor,
-      typographyType,
+      color,
+      type,
       forwardedRef,
       disabled,
       ...rest
@@ -45,8 +45,8 @@ class BaseTypography extends React.PureComponent<TypographyProps> {
   }
 
   private get typeClass() {
-    const { typographyType } = this.props;
-    switch (typographyType) {
+    const { type } = this.props;
+    switch (type) {
       case TypographyType.H6:
         return styles.typography_type_h6;
       case TypographyType.TITLE:
@@ -55,20 +55,14 @@ class BaseTypography extends React.PureComponent<TypographyProps> {
         return styles.typography_type_subtitle;
       case TypographyType.BUTTON:
         return styles.typography_type_button;
-      case TypographyType.CAPTION:
-        return styles.typography_type_caption;
-      case TypographyType.BODY:
-        return styles.typography_type_body;
-      case TypographyType.LABEL:
-        return styles.typography_type_label;
       default:
         return null;
     }
   }
 
   private get colorClass() {
-    const { typographyColor } = this.props;
-    switch (typographyColor) {
+    const { color } = this.props;
+    switch (color) {
       case TypographyColor.PRIMARY:
         return styles.typography_color_primary;
       case TypographyColor.SECONDARY:
@@ -83,7 +77,7 @@ class BaseTypography extends React.PureComponent<TypographyProps> {
   }
 }
 
-export default React.forwardRef(
+export default React.forwardRef<HTMLElement, TypographyProps>(
   (props: TypographyProps, ref: React.Ref<HTMLElement>) => {
     return <BaseTypography {...props} forwardedRef={ref} />;
   }

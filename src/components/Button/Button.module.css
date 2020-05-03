@@ -104,6 +104,7 @@
 .button_type_outline svg {
   fill: var(--color-first-text, var(--color-first));
 }
+
 .button_type_outline:enabled:hover svg,
 .button_type_outline:enabled:focus svg {
   fill: var(--color-first-text--hover, var(--color-first--hover));
@@ -127,7 +128,7 @@
 }
 
 .button_type_invert:hover:enabled,
-.button_type_invert:focus:enabled{
+.button_type_invert:focus:enabled {
   background: radial-gradient(
       circle,
       var(--color-first--hover) 1%,

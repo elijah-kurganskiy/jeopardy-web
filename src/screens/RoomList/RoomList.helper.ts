@@ -1,5 +1,5 @@
-import { QUERY_ROOM_LIST } from "./RoomList.graphql";
 import { MutationUpdaterFn } from "apollo-boost";
+import { QUERY_ROOM_LIST } from "./RoomList.graphql";
 import { MutationAddRoom, QueryRooms } from "./RoomList.types";
 
 export const updateRoomsCache: MutationUpdaterFn<MutationAddRoom> = (

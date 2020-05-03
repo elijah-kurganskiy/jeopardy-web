@@ -1,11 +1,8 @@
-import React, { useCallback } from "react";
-import { QuestionType } from "types";
-import Typography, {
-  TypographyColor,
-  TypographyType,
-} from "components/Typography";
 import cn from "classnames";
+import Typography from "components/Typography";
+import React, { useCallback } from "react";
 import { useGameController, useGameState } from "service/game";
+import { QuestionType } from "types";
 import styles from "./Question.module.css";
 
 interface QuestionProps {
@@ -32,8 +29,8 @@ const Question = React.memo(
       >
         <Typography
           className={styles.question__price}
-          typographyType={TypographyType.SUBTITLE}
-          typographyColor={TypographyColor.SECONDARY}
+          type="subtitle"
+          color="secondary"
         >
           {price}
         </Typography>

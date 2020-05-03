@@ -7,10 +7,10 @@ import {
   Switch,
 } from "react-router-dom";
 import {
-  ROUTE_ROOM_DETAIL,
-  ROUTE_LOGIN,
-  ROUTE_ROOMS,
   GAME_DETAIL,
+  ROUTE_LOGIN,
+  ROUTE_ROOM_DETAIL,
+  ROUTE_ROOMS,
 } from "./const/routes";
 import { USER_QUERY } from "./graphql/queries/user";
 import GameDetails from "./screens/GameDetails";

@@ -1,13 +1,10 @@
 import Button from "components/Button";
-// import cn from "classnames";
-import Typography, {
-  TypographyColor,
-  TypographyType,
-} from "components/Typography";
-import React, { useCallback, useMemo, useState } from "react";
-import { useGameController, useGameState } from "service/game";
 import Dialog from "components/Dialog";
 import Input from "components/Input";
+// import cn from "classnames";
+import Typography from "components/Typography";
+import React, { useCallback, useMemo, useState } from "react";
+import { useGameController, useGameState } from "service/game";
 import styles from "./QuestionAnswerDialog.module.css";
 
 const QuestionAnswerDialog = () => {
@@ -56,9 +53,9 @@ const QuestionAnswerDialog = () => {
     () => (
       <>
         <Typography
-            className={styles.dialog__stubText}
-            typographyType={TypographyType.SUBTITLE}
-          typographyColor={TypographyColor.SECONDARY}
+          className={styles.dialog__stubText}
+          type="subtitle"
+          color="secondary"
         >
           {answeringPlayer?.username} is answering
         </Typography>
@@ -69,19 +66,11 @@ const QuestionAnswerDialog = () => {
 
   return (
     <Dialog className={styles.dialog}>
-      <Typography
-        typographyType={TypographyType.H6}
-        typographyColor={TypographyColor.PRIMARY}
-        className={styles.dialog__title}
-      >
+      <Typography type="h6" color="primary" className={styles.dialog__title}>
         Вопрос за {currentQuestion?.price}
       </Typography>
 
-      <Typography
-        typographyType={TypographyType.TITLE}
-        typographyColor={TypographyColor.PRIMARY}
-        className={styles.dialog__text}
-      >
+      <Typography type="title" color="primary" className={styles.dialog__text}>
         {currentQuestion?.title}
       </Typography>
       {currentUserIsAnswering ? renderInput : renderStub}

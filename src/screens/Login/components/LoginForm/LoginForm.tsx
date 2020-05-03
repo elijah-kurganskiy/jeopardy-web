@@ -1,9 +1,6 @@
 import Button, { ButtonColor, ButtonSize, ButtonType } from "components/Button";
 import Input from "components/Input";
-import Typography, {
-  TypographyColor,
-  TypographyType,
-} from "components/Typography";
+import Typography from "components/Typography";
 import React from "react";
 import { useField, useForm } from "react-final-form-hooks";
 import styles from "./LoginForm.module.css";
@@ -29,8 +26,8 @@ export default function LoginForm(props: {
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <Typography
-        typographyType={TypographyType.SUBTITLE}
-        typographyColor={TypographyColor.SECONDARY}
+        type="subtitle"
+        color="secondary"
         className={styles.form__label}
         component="label"
         htmlFor="email"
@@ -40,8 +37,8 @@ export default function LoginForm(props: {
       <Input {...username.input} hasError={!!submitError} type="text" />
 
       <Typography
-        typographyType={TypographyType.SUBTITLE}
-        typographyColor={TypographyColor.SECONDARY}
+        type="subtitle"
+        color="secondary"
         className={styles.form__label}
         component="label"
         htmlFor="password"

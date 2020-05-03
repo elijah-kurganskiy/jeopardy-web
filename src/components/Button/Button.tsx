@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import Typography, { TypographyType } from "components/Typography";
+import Typography from "components/Typography";
 import React from "react";
 import { ButtonColor, ButtonSize, ButtonType } from "./Button.const";
 import styles from "./Button.module.css";
@@ -89,7 +89,7 @@ export class BaseButton extends React.PureComponent<Props> {
       >
         {this.renderStartIcon()}
         {children && (
-          <Typography typographyType={TypographyType.BUTTON} component="span">
+          <Typography type="button" component="span">
             {children}
           </Typography>
         )}

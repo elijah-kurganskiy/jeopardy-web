@@ -1,11 +1,8 @@
 import { useMutation, useQuery } from "@apollo/react-hooks";
-import React, { useCallback, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
 import Button from "components/Button";
-import Typography, {
-  TypographyColor,
-  TypographyType,
-} from "components/Typography";
+import Typography from "components/Typography";
+import React, { useCallback, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 import QuizList from "./components/QuizList";
 import UserItem from "./components/UserItem";
 import {
@@ -72,11 +69,7 @@ function RoomDetails() {
   return (
     <div className={styles.details}>
       <div className={styles.toolbar}>
-        <Typography
-          className={styles.toolbar__title}
-          typographyType={TypographyType.H6}
-          typographyColor={TypographyColor.PRIMARY}
-        >
+        <Typography className={styles.toolbar__title} type="h6" color="primary">
           {name}
         </Typography>
 

@@ -1,10 +1,7 @@
 import { useQuery } from "@apollo/react-hooks";
 import cn from "classnames";
+import Typography from "components/Typography";
 import React, { useCallback } from "react";
-import Typography, {
-  TypographyColor,
-  TypographyType,
-} from "components/Typography";
 import { QUERY_QUIZZES } from "./QuizList.graphql";
 import styles from "./QuizList.module.css";
 import { QuizzesQuery } from "./QuizList.types";
@@ -27,10 +24,7 @@ const QuizItem = React.memo(
         })}
         onClick={onClickItem}
       >
-        <Typography
-          typographyType={TypographyType.TITLE}
-          typographyColor={TypographyColor.PRIMARY}
-        >
+        <Typography type="title" color="primary">
           {name}
         </Typography>
       </div>

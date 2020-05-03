@@ -1,8 +1,9 @@
 import { useMutation, useQuery } from "@apollo/react-hooks";
-import React, { useCallback } from "react";
 import Button from "components/Button";
-import Typography, { TypographyType } from "components/Typography";
+import Typography from "components/Typography";
 import { useDialogVisibleState } from "hooks";
+import React, { useCallback } from "react";
+import { useHistory } from "react-router-dom";
 import AddRoomDialog from "./components/AddRoomDialog";
 import RoomItem from "./components/RoomItem";
 import {
@@ -17,7 +18,6 @@ import {
   MutationJoinToRoom,
   QueryRooms,
 } from "./RoomList.types";
-import { useHistory } from "react-router-dom";
 
 function RoomList() {
   const [dialogIsVisible, openDialog, closeDialog] = useDialogVisibleState();
@@ -60,7 +60,7 @@ function RoomList() {
   return (
     <div className={styles.roomList}>
       <div className={styles.toolbar}>
-        <Typography typographyType={TypographyType.H6}>ROOM LIST</Typography>
+        <Typography type="h6">ROOM LIST</Typography>
 
         <Button className={styles.toolbar__button} onClick={openDialog}>
           New Room

@@ -1,11 +1,8 @@
 import Button from "components/Button";
-import Typography, {
-  TypographyColor,
-  TypographyType,
-} from "components/Typography";
+import Dialog from "components/Dialog/Dialog";
+import Typography from "components/Typography";
 import React from "react";
 import { useGameController, useGameState } from "service/game";
-import Dialog from "components/Dialog/Dialog";
 import styles from "./QuestionCaptureDialog.module.css";
 
 const QuestionCaptureDialog = () => {
@@ -17,19 +14,11 @@ const QuestionCaptureDialog = () => {
 
   return (
     <Dialog className={styles.dialog}>
-      <Typography
-        typographyType={TypographyType.H6}
-        typographyColor={TypographyColor.PRIMARY}
-        className={styles.dialog__title}
-      >
+      <Typography type="h6" color="primary" className={styles.dialog__title}>
         Вопрос за {currentQuestion?.price}
       </Typography>
 
-      <Typography
-        typographyType={TypographyType.TITLE}
-        typographyColor={TypographyColor.PRIMARY}
-        className={styles.dialog__text}
-      >
+      <Typography type="title" color="primary" className={styles.dialog__text}>
         {currentQuestion?.title}
       </Typography>
 

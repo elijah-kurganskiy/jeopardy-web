@@ -1,8 +1,5 @@
 import classNames from "classnames";
-import Typography, {
-  TypographyColor,
-  TypographyType
-} from "components/Typography";
+import Typography from "components/Typography";
 import React, { PureComponent, ReactNode } from "react";
 import styles from "./Input.module.css";
 import { Icon, InputProps } from "./Input.types";
@@ -33,7 +30,7 @@ class Input extends PureComponent<InputProps> {
             inputContainerClassName,
             {
               [styles.inputContainer_error]: hasError,
-              [styles.inputContainer_disabled]: disabled
+              [styles.inputContainer_disabled]: disabled,
             }
           )}
           onClick={!disabled ? onClick : undefined}
@@ -74,10 +71,8 @@ class Input extends PureComponent<InputProps> {
     }
     return (
       <Typography
-        typographyColor={
-          hasError ? TypographyColor.ERROR : TypographyColor.PRIMARY
-        }
-        typographyType={TypographyType.CAPTION}
+        color={hasError ? "error" : "primary"}
+        type="subtitle"
         className={styles.inputContainer__helperText}
       >
         {helperText}

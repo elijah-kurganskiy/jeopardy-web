@@ -1,19 +1,19 @@
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .form__title {
-    align-self: center;
-    margin-bottom: 1.5rem;
+  align-self: center;
+  margin-bottom: 1.5rem;
 }
 
 .form__label {
-    margin-top: 1rem;
-    margin-bottom: 0.6rem;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .form__button {
-    margin-top: 5rem;
-    align-self: center;
+  margin-top: 5rem;
+  align-self: center;
 }

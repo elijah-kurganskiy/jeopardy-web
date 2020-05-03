@@ -1,5 +1,5 @@
 import cn from "classnames";
-import Typography, { TypographyType } from "components/Typography";
+import Typography from "components/Typography";
 import React from "react";
 import styles from "./UserItem.module.css";
 
@@ -11,7 +11,7 @@ interface Props {
 function UserItem({ name, className }: Props) {
   return (
     <div className={cn(className, styles.room)}>
-      <Typography typographyType={TypographyType.TITLE}>{name}</Typography>
+      <Typography type="title">{name}</Typography>
     </div>
   );
 }

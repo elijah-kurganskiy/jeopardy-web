@@ -1,12 +1,11 @@
 import React from "react";
-import { TypographyColor, TypographyType } from "./Typography.const";
 
 export interface TypographyProps
-  extends React.AllHTMLAttributes<HTMLSpanElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLSpanElement>, "color" | "type"> {
   component?: React.ElementType<any>;
   children?: React.ReactNode;
   className?: string;
-  typographyType?: TypographyType;
-  typographyColor?: TypographyColor;
+  type?: "h6" | "title" | "subtitle" | "button" | "caption";
+  color?: "primary" | "secondary" | "white" | "error";
   forwardedRef?: React.Ref<HTMLElement>;
 }

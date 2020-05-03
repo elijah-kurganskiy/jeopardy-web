@@ -1,7 +1,7 @@
 import React from "react";
 import { RoundType } from "types";
-import Theme from "./components/Theme";
 import styles from "./Board.module.css";
+import Theme from "./components/Theme";
 
 interface BoardProps {
   round: RoundType;

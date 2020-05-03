@@ -1,10 +1,7 @@
 import { useMutation } from "@apollo/react-hooks";
 import cn from "classnames";
 import Paper from "components/Paper";
-import Typography, {
-  TypographyColor,
-  TypographyType,
-} from "components/Typography";
+import Typography from "components/Typography";
 import { ROUTE_ROOMS } from "const/routes";
 import { FORM_ERROR } from "final-form";
 import React, { useCallback } from "react";
@@ -43,11 +40,7 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <Paper className={cn(styles.paper)}>
-        <Typography
-          typographyType={TypographyType.H6}
-          typographyColor={TypographyColor.PRIMARY}
-          className={styles.form__title}
-        >
+        <Typography type="h6" color="primary" className={styles.form__title}>
           LOG IN
         </Typography>
         <LoginForm onSubmit={onSubmit} />

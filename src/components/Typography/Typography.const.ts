@@ -3,9 +3,6 @@ export enum TypographyType {
   TITLE = "title",
   SUBTITLE = "subtitle",
   BUTTON = "button",
-  CAPTION = "caption",
-  BODY = "body",
-  LABEL = "label",
 }
 
 export enum TypographyColor {
