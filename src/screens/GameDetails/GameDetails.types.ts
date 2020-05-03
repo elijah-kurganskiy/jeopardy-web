@@ -4,6 +4,7 @@ interface GameState {
   stateName: string;
   currentRoundId: number;
   selectedQuestionId?: number;
+  openedQuestionsIds: number[];
 }
 
 export interface QueryGame {

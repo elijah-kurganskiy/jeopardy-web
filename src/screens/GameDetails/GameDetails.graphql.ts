@@ -6,6 +6,8 @@ export const GAME_STATE_FRAGMENT = gql`
     stateName
     currentRoundId
     selectedQuestionId
+    answeredPlayerIds
+    openedQuestionsIds
   }
 `;
 
@@ -61,6 +63,17 @@ export const MUTATION_SELECT_QUESTION = gql`
 export const MUTATION_CAPTURE_QUESTION = gql`
   mutation CaptureQuestion($gameId: Int!) {
     captureQuestion(data: { gameId: $gameId }) {
+      state {
+        ...GameStateFragment
+      }
+    }
+  }
+  ${GAME_STATE_FRAGMENT}
+`;
+
+export const MUTATION_ANSWER_QUESTION = gql`
+  mutation AnswerQuestion($gameId: Int!, $answer: String!) {
+    answer(data: { gameId: $gameId, answer: $answer }) {
       state {
         ...GameStateFragment
       }

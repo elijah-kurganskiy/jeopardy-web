@@ -1,11 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { GameController, GameControllerProvider } from "service/game";
-import Board from "./components/Board";
-import QuestionModal from "./components/QuestionModal";
+import {
+  GameController,
+  GameControllerProvider,
+  GameState,
+  GameStateProvider,
+} from "service/game";
+import GameRouter from "./components/GameRouter";
 import {
   useCurrentRound,
   useGameQuery,
+  useOnAnswer,
   useOnCaptureQuestion,
   useOnSelectQuestion,
   useSelectedQuestion,
@@ -21,6 +26,7 @@ export default function GameDetails() {
   const currentQuestion = useSelectedQuestion(data);
   const selectQuestion = useOnSelectQuestion(gameId);
   const captureQuestion = useOnCaptureQuestion(gameId);
+  const answer = useOnAnswer(gameId);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -31,16 +37,21 @@ export default function GameDetails() {
   const gameController: GameController = {
     selectQuestion,
     captureQuestion,
+    answer,
+  };
+
+  const gameState: GameState = {
+    ...data?.game.state!,
+    currentRound,
+    currentQuestion,
   };
 
   return (
     <div className={styles.game}>
       <GameControllerProvider controller={gameController}>
-        <Board round={currentRound} />
-        <QuestionModal
-          isOpen={!!currentQuestion}
-          text={currentQuestion?.title}
-        />
+        <GameStateProvider state={gameState}>
+          <GameRouter />
+        </GameStateProvider>
       </GameControllerProvider>
     </div>
   );

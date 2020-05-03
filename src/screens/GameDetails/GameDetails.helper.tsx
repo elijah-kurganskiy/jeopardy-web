@@ -1,6 +1,7 @@
 import { useMutation, useQuery } from "@apollo/react-hooks";
 import { useCallback, useEffect, useMemo } from "react";
 import {
+  MUTATION_ANSWER_QUESTION,
   MUTATION_CAPTURE_QUESTION,
   MUTATION_SELECT_QUESTION,
   MUTATION_UPDATE_STATE,
@@ -91,4 +92,22 @@ export function useOnCaptureQuestion(gameId: number) {
     });
     return null;
   }, [captureQuestion, gameId]);
+}
+
+export function useOnAnswer(gameId: number) {
+  const [answer] = useMutation(MUTATION_ANSWER_QUESTION, {
+    ignoreResults: true,
+  });
+  return useCallback(
+    async (answerValue: string) => {
+      await answer({
+        variables: {
+          gameId,
+          answer: answerValue,
+        },
+      });
+      return null;
+    },
+    [answer, gameId]
+  );
 }

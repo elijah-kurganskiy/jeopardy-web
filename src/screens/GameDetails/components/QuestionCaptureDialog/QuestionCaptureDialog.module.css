@@ -1,0 +1,17 @@
+.dialog {
+  max-width: 50rem;
+}
+
+.dialog__title {
+  text-align: center;
+}
+
+.dialog__text {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.dialog__button {
+  margin-top: 3rem;
+  min-width: 10rem;
+}

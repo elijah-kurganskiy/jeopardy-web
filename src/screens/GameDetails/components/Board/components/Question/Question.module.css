@@ -12,3 +12,7 @@
 .question:hover .question__price {
   color: var(--color-primary-dark);
 }
+
+.question_hidden {
+  visibility: hidden;
+}
