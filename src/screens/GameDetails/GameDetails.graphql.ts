@@ -8,6 +8,12 @@ export const GAME_STATE_FRAGMENT = gql`
     selectedQuestionId
     answeredPlayerIds
     openedQuestionsIds
+    events {
+      createdAt
+      finishedAt
+      properties
+      type
+    }
   }
 `;
 

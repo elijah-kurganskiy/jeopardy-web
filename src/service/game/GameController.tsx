@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { QuestionType, RoundType } from "../../types";
+import { GameEvent, QuestionType, RoundType } from "types";
 
 export interface GameController {
   selectQuestion: (questionId: number) => void;
@@ -11,6 +11,7 @@ export interface GameState {
   stateName: string;
   currentRound: RoundType;
   currentQuestion?: QuestionType;
+  events: GameEvent[];
   openedQuestionsIds: number[];
 }
 

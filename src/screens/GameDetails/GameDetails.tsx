@@ -6,6 +6,7 @@ import {
   GameState,
   GameStateProvider,
 } from "service/game";
+import GameEvents from "./components/GameEvents";
 import GameRouter from "./components/GameRouter";
 import {
   useCurrentRound,
@@ -51,6 +52,7 @@ export default function GameDetails() {
       <GameControllerProvider controller={gameController}>
         <GameStateProvider state={gameState}>
           <GameRouter />
+          <GameEvents />
         </GameStateProvider>
       </GameControllerProvider>
     </div>

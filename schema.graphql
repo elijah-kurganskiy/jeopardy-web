@@ -27,6 +27,15 @@ type Game {
   createdAt: DateTime!
   quiz: Quiz!
   players: [Player!]!
+  events: [GameEvent!]!
+}
+
+type GameEvent {
+  id: Int!
+  createdAt: DateTime!
+  finishedAt: DateTime!
+  type: String!
+  properties: JSON!
 }
 
 type GameState {
@@ -41,7 +50,11 @@ type GameState {
   cardSelectionAt: DateTime
   questionCaptureAt: DateTime
   openedQuestionsIds: [Int!]!
+  events: [GameEvent!]!
 }
+
+# JSON type
+scalar JSON
 
 input LoginInput {
   username: String!

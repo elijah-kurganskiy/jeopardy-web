@@ -4,7 +4,7 @@ import Board from "../Board";
 import QuestionAnswerDialog from "../QuestionAnswerDialog";
 import QuestionCaptureDialog from "../QuestionCaptureDialog";
 
-const GameRouter = () => {
+const GameEvents = () => {
   const { stateName, currentRound } = useGameState();
   switch (stateName) {
     case GAME_ACTIONS_STATES.WAITING_FOR_CAPTURE_QUESTION:
@@ -26,4 +26,4 @@ const GameRouter = () => {
   }
 };
 
-export default React.memo(GameRouter);
+export default React.memo(GameEvents);
