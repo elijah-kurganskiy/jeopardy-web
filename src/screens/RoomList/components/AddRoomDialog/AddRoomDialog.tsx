@@ -35,7 +35,7 @@ function AddRoomDialog({ isOpen, onClose, onSave }: Props) {
             className={styles.dialog__toolbar__close}
             startIcon={CloseIcon}
             buttonType={ButtonType.FLAT}
-            buttonColor={ButtonColor.SECONDARY}
+            buttonColor={ButtonColor.FAINT}
           />
         </div>
         <form onSubmit={handleSubmit}>

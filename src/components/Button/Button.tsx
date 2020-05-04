@@ -8,16 +8,16 @@ import { Props } from "./Button.types";
 export class BaseButton extends React.PureComponent<Props> {
   public static defaultProps = {
     buttonType: ButtonType.FILLED,
-    buttonColor: ButtonColor.PRIMARY,
+    buttonColor: ButtonColor.ACCENT,
   };
 
   private get colorClass() {
     const { buttonColor } = this.props;
     switch (buttonColor) {
-      case ButtonColor.PRIMARY:
-        return styles.button_color_primary;
-      case ButtonColor.SECONDARY:
-        return styles.button_color_secondary;
+      case ButtonColor.ACCENT:
+        return styles.button_color_accent;
+      case ButtonColor.FAINT:
+        return styles.button_color_faint;
       case ButtonColor.NONE:
       default:
         return null;

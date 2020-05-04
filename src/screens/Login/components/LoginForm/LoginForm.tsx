@@ -1,4 +1,4 @@
-import Button, { ButtonColor, ButtonType } from "components/Button";
+import Button from "components/Button";
 import Input from "components/Input";
 import Typography from "components/Typography";
 import React from "react";
@@ -58,8 +58,8 @@ export default function LoginForm(props: {
         className={styles.form__button}
         data-testid="login"
         disabled={submitting}
-        buttonType={ButtonType.FILLED}
-        buttonColor={ButtonColor.PRIMARY}
+        buttonType="filled"
+        buttonColor="accent"
       >
         Log In
       </Button>

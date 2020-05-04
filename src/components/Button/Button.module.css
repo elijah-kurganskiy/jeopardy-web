@@ -5,9 +5,14 @@
   cursor: pointer;
   padding: 0.6rem 1rem;
   text-align: center;
-  font-size: 1em;
   border: none;
   justify-content: center;
+}
+
+.button:disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.4;
 }
 
 .button .button__text {
@@ -22,28 +27,24 @@
   outline: none;
 }
 
-.button_color_primary {
+.button_color_accent {
   --color-first: var(--color-accent-strong);
   --color-first--hover: var(--color-accent-strong-down);
   --color-first--active: var(--color-accent-strong-up);
 
   --color-second: var(--color-text-base-weak);
-  --color-second--hover: var(--color-text-base-weak);
-  --color-second--active: var(--color-text-base-weak);
+  --color-second--hover: var(--color-base-weak);
+  --color-second--active: var(--color-base-weak);
 }
 
-.button_color_secondary {
-  --color-first: var(--color-accent-weak);
-  --color-first--hover: var(--color-accent-weak-down);
-  --color-first--active: var(--color-accent-weak-up);
+.button_color_faint {
+  --color-first: var(--color-faint-strong);
+  --color-first--hover: var(--color-faint-strong-down);
+  --color-first--active: var(--color-faint-strong-up);
 
-  --color-first-text: var(--color-text-faint-weak);
-  --color-first-text--hover: var(--color-text-faint-weak-down);
-  --color-first-text--active: var(--color-text-faint-weak-up);
-
-  --color-second: var(--color-accent-strong);
-  --color-second--hover: var(--color-accent-strong-down);
-  --color-second--active: var(--color-accent-strong-up);
+  --color-second: var(--color-base-weak);
+  --color-second--hover: var(--color-base-weak);
+  --color-second--active: var(--color-base-weak);
 }
 
 .button_type_filled {
@@ -66,13 +67,6 @@
   color: var(--color-second--active);
 }
 
-.button_type_filled:disabled {
-  background-color: var(--color-first);
-  border-color: var(--color-first);
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
 .button_type_filled svg {
   fill: var(--color-second);
 }
@@ -81,71 +75,56 @@
   border: 1px solid var(--color-first);
   background-color: unset;
   border-color: var(--color-first);
-  color: var(--color-first-text, var(--color-first));
+  color: var(--color-first);
 }
 
 .button_type_outline:hover,
 .button_type_outline:focus {
   border-color: var(--color-first--hover);
-  color: var(--color-first-text--hover, var(--color-first--hover));
+  color: var(--color-first--hover);
 }
 
 .button_type_outline:active {
   border-color: var(--color-first--active);
-  color: var(--color-first-text--active, var(--color-first--active));
-}
-
-.button_type_outline:disabled {
-  border-color: var(--color-first);
-  cursor: not-allowed;
-  opacity: 0.4;
+  color: var(--color-first--active);
 }
 
 .button_type_outline svg {
-  fill: var(--color-first-text, var(--color-first));
+  fill: var(--color-first);
 }
 
 .button_type_outline:hover svg,
 .button_type_outline:focus svg {
-  fill: var(--color-first-text--hover, var(--color-first--hover));
+  fill: var(--color-first--hover);
 }
 
 .button_type_outline:active svg {
-  fill: var(--color-first-text--active, var(--color-first--active));
+  fill: var(--color-first--active);
 }
 .button_type_flat {
   border: 1px solid transparent;
   background-color: transparent;
-  color: var(--color-first-text, var(--color-first));
+  color: var(--color-first);
 }
 
 .button_type_flat:hover,
 .button_type_flat:focus {
-  border-color: var(--color-second--hover);
-  background: var(--color-second--hover);
-  color: var(--color-first-text--hover, var(--color-first--hover));
+  color: var(--color-first--hover);
 }
 
 .button_type_flat:active {
-  border-color: var(--color-second--active);
-  background: var(--color-second--active);
-  color: var(--color-first-text--active, var(--color-first--active));
-}
-
-.button_type_flat:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
+  color: var(--color-first--active);
 }
 
 .button_type_flat svg {
-  fill: var(--color-first-text, var(--color-first));
+  fill: var(--color-first);
 }
 
 .button_type_flat:hover svg,
 .button_type_flat:focus svg {
-  fill: var(--color-first-text--hover, var(--color-first--hover));
+  fill: var(--color-first--hover);
 }
 
 .button_type_flat:active svg {
-  fill: var(--color-first-text--active, var(--color-first--active));
+  fill: var(--color-first--active);
 }

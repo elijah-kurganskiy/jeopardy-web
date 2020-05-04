@@ -1,11 +1,11 @@
 export enum ButtonType {
-  FILLED,
-  OUTLINED,
-  FLAT,
+  FILLED = "filled",
+  OUTLINED = "outlined",
+  FLAT = "flat",
 }
 
 export enum ButtonColor {
-  NONE,
-  PRIMARY,
-  SECONDARY,
+  NONE = "none",
+  ACCENT = "accent",
+  FAINT = "faint",
 }
