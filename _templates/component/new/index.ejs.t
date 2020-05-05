@@ -1,5 +1,5 @@
 ---
 to: src/components/<%= name %>/index.ts
 ---
-export { default } from "./<%= name %>.tsx"
+export { default } from "./<%= name %>"
 
